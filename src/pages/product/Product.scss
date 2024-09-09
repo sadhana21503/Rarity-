@@ -1,0 +1,267 @@
+@mixin respond-to($device) {
+	@if $device == phone {
+		@media (max-width: 600px) {
+			@content;
+		}
+	} @else if $device == tablet {
+		@media  (min-width: 601px) and (max-width: 900px) {
+			@content;
+		}
+	} @else if $device == big {
+		@media (min-width: 901px) and (max-width: 1400px) {
+			@content;
+		}
+	}
+}
+.product-main {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	.product-top {
+		padding: 20px;
+		display: flex;
+		width: 100%;
+		@include respond-to(tablet) {
+			flex-direction: column;
+		}
+		@include respond-to(big) {
+			flex-direction: column;
+		}
+		@include respond-to(phone) {
+			flex-direction: column;
+			padding: 10px;
+		}
+		.product-top-left {
+			display: flex;
+			gap: 25px;
+			flex: 1 1 0;
+			padding: 15px;
+			@include respond-to(tablet) {
+				flex-direction: column-reverse;
+			}
+			@include respond-to(phone) {
+				flex-direction: column-reverse;
+				gap: 10px;
+				padding: 5px;
+			}
+			.product-side-images {
+				display: flex;
+				flex-direction: column;
+				gap: 18px;
+				justify-content: center;
+				align-items: center;
+				height: 100%;
+				overflow: hidden;
+				@include respond-to(big){
+					margin-left: 50px;
+					align-items: center;
+					justify-content: center;
+					width: 200px;
+					height: 900px;
+					img{
+						width:100%;
+						height: 160px;
+					}
+				}
+				@include respond-to(tablet) {
+					flex-direction: row;
+					height: 150px;
+					margin-left: 10px;
+					img {
+						height: 150px;
+						width: 100px;
+					}
+				}
+				@include respond-to(phone) {
+					flex-direction: row;
+					gap: 10px;
+					height: 80px;
+					img {
+						height: 80px;
+						width: 70px;
+					}
+				}
+				
+				img {
+					cursor: pointer;
+					border: 2px solid transparent;
+					transition: border 0.3s ease;
+					width: 100%;
+					&.active {
+						border-color: black;
+					}
+				}
+			}
+			.product-main-image {
+				align-items: center;
+				justify-content: center;
+				display: flex;
+				width: 100%;
+				overflow: hidden;
+				img {
+					height: 100%;
+					width: 100%;
+					object-fit: contain;
+					@include respond-to(big) {
+						height: 880px;
+					}
+					@include respond-to(phone){
+						height: 400px;
+
+					}
+				}
+			}
+		}
+		.product-top-right {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			padding: 20px 0;
+			justify-content: start;
+			.product-name {
+				padding: 0 40px;
+				display: flex;
+				flex-direction: column;
+				gap: 8px;
+				@include respond-to(phone) {
+					padding: 20px;
+				}
+				h2 {
+					font-size: 40px;
+					font-weight: 400;
+					@include respond-to(phone) {
+						font-size: 30px;
+					}
+				}
+				p {
+					font-size: 20px;
+				}
+			}
+			.product-details {
+				padding: 30px 40px;
+				display: flex;
+				flex-direction: column;
+				gap: 30px;
+				@include respond-to(phone) {
+					padding: 20px;
+				}
+
+				.desc {
+					display: flex;
+					flex-direction: column;
+					gap: 8px;
+					h2 {
+						font-size: 22px;
+						font-weight: 600;
+						@include respond-to(phone) {
+							font-size: 15px;
+						}
+						@include respond-to(big) {
+							font-size: 25px;
+						}
+					}
+					p {
+						font-size: 18px;
+						@include respond-to(big) {
+							font-size: 22px;
+						}
+						@include respond-to(phone) {
+							font-size: 16px;
+						}
+					}
+				}
+			}
+			.product-size {
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+				padding: 0 40px;
+				@include respond-to(phone) {
+					padding: 10px;
+				}
+				.product-size-top {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					h3 {
+						font-size: 20px;
+					}
+					button {
+						background-color: black;
+						color: white;
+						padding: 5px;
+						border-radius: 5px;
+						font-size: 16px;
+						border: none;
+						cursor: pointer;
+						transition: background-color 0.3s ease;
+						&:hover {
+							background-color: #302e2e;
+						}
+					}
+				}
+				.product-size-bottom {
+					display: flex;
+					flex-direction: column;
+					form {
+						display: flex;
+						flex-direction: column;
+						gap: 20px;
+						.size-options {
+							display: flex;
+							gap: 20px;
+							@include respond-to(phone) {
+								display: grid;
+								grid-template-columns: repeat(4, 1fr);
+								gap: 10px;
+							}
+							.size-box {
+								width: 100%;
+								padding: 10px;
+								border: 1px solid #ccc;
+								text-align: center;
+								cursor: pointer;
+								transition: background-color 0.3s ease, color 0.3s ease;
+								&:hover,
+								&.selected {
+									background-color: black;
+									color: white;
+									border-color: black;
+								}
+								@include respond-to(phone) {
+									width: 100%;
+								}
+							}
+						}
+						.product-buttons {
+							display: flex;
+							gap: 20px;
+							button {
+								width: 100%;
+								padding: 10px;
+								font-size: 18px;
+								cursor: pointer;
+								border: none;
+								background-color: #ccc;
+								color: black;
+								transition: background-color 0.3s ease, color 0.3s ease;
+								&:hover {
+									background-color: black;
+									color: white;
+								}
+							}
+						}
+						.size-chart-image {
+							display: flex;
+							overflow: hidden;
+							img {
+								height: 100%;
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

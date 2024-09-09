@@ -1,0 +1,131 @@
+@import "../../../globalscss/global.scss";
+.cart-card {
+	display: flex;
+	border: 1px solid #e0e0e0;
+	width: 100%;
+	border-radius: 10px;
+	background-color: #ffffff;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	margin: 10px 0;
+	padding: 10px;
+	transition: box-shadow 0.3s ease;
+	&:hover {
+		box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+	}
+	@include responsive(500px){
+		width: 100%;
+	}
+	.cart-card-left {
+		display: flex;
+		flex: 1;
+		align-items: center;
+		gap: 15px;
+		.product-image {
+			width: 23%;
+			height: 100%;
+			padding: 5px;
+			border-radius: 10px;
+			@include responsive(500px){
+				width: 40%;
+			}
+			@include responsive(900px){
+				width: 100px;
+			}
+			@include responsive(1200px){
+				width: 40%;
+				width: 120px;
+			}
+			img {
+				width: 100%;
+				height: 100%;
+				border-radius: 5px;
+				object-fit: cover;
+				@include responsive(900px){
+				width: 100px;
+			}
+			}
+		}
+		.cart-item-desc {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+			padding: 5px;
+			flex: 1;
+			h3 {
+				font-size: 1.4rem;
+				font-weight: 600;
+				@include responsive(500px){
+					font-size: 1.2rem;
+				}
+			}
+			p {
+				font-size: 1.2rem;
+				@include responsive(500px){
+					font-size: 1rem;
+				}
+			}
+			span {
+				font-size: 1.4rem;
+				font-weight: 600;
+				@include responsive(500px){
+					font-size: 1.2rem;
+				}
+			}
+		}
+	}
+	.itemButtons {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+		padding: 10px;
+		width: 150px;
+		@include responsive(500px){
+			width: 90px;
+		}
+		.plus-minus-button {
+			display: flex;
+			gap: 10px;
+			button {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				height: 100%;
+				font-size: 1.5rem;
+				padding: 8px 12px;
+				cursor: pointer;
+				border: 1px solid #ddd;
+				border-radius: 5px;
+				background-color: #fff;
+				transition: background-color 0.3s, border-color 0.3s;
+				&:hover {
+					background-color: #f1f1f1;
+				}
+				@include responsive(500px){
+					width: 40px;
+					font-size: 1.2rem;
+					padding: 10px;
+				}
+			}
+		}
+		.delete-button {
+			background-color: #fff;
+			color: #ff4d4f;
+			font-size: 1.6rem;
+			border: none;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			transition: background-color 0.3s, color 0.3s;
+			&:hover {
+				background-color: #f8d7da;
+				color: #dc3545;
+			}
+		}
+	}
+}

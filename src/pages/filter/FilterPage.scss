@@ -1,0 +1,362 @@
+.filter-page {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .filter-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    color: #1c1a1a;
+    position: absolute;
+    top: 130px;
+    right: 20px;
+    z-index: 51;
+  }
+  
+  .filter-sidebar {
+    width: 200px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: block; 
+    
+  }
+  
+  .filter-sidebar.visible {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #efeeee;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+    overflow-y: auto;
+    padding: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .filter-section {
+    margin-bottom: 20px;
+    font-size: small;
+    font-weight: 300;
+  }
+  
+  .filter-section h3 {
+    cursor: pointer;
+    position: relative;
+    padding: 5px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    transition: color 0.3s;
+  }
+  
+  .filter-section h3:hover {
+    color: #555;
+  }
+  
+  .filter-section ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 15px;
+  }
+  
+  .filter-section li {
+    margin-bottom: 15px;
+  }
+  
+  .filter-section input {
+    margin-right: 10px;
+  }
+  .filter-text{
+    margin-bottom: 10px;
+    background-color: white;
+    position: relative;
+    z-index: 40;
+    width: 100%;
+    font-size: 1.45rem;
+    padding: 10px;
+  }
+  .filtered-products {
+    flex: 1;
+    padding: 15px;
+    max-height: calc(3 * 450px + 50px);
+    overflow-y: auto;
+    background-color: #f9f9f9;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+  
+  .product-card {
+    position: relative;
+    text-align: left;
+    font-size: small;
+    min-height: 400px;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    overflow: hidden;
+    margin-top: 20px;
+  }
+  .productt-text{
+    margin-left: 15px;
+  }
+  .product-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .product-image {
+    position: relative;
+    width: 100%;
+    height: 400px;
+  }
+  
+  .product-image .default-image,
+  .product-image .hover-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    transition: opacity 0.3s;
+  }
+  
+  .product-image .default-image {
+    opacity: 1;
+  }
+  
+  .product-image .hover-image {
+    opacity: 0;
+  }
+  
+  .product-card:hover .product-image .default-image {
+    opacity: 0;
+  }
+  
+  .product-card:hover .product-image .hover-image {
+    opacity: 1;
+  }
+  
+  .product-text {
+    position: relative;
+    width: 100%;
+    text-align: left;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+    margin-top: 10px;
+  }
+  
+  .product-card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .product-card p {
+    margin: 5px 0;
+    color: #777;
+  }
+  .no-products-found {
+    text-align: left;
+    color: #000000;
+    font-size: 18px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+  }
+  
+  @media (max-width: 1000px) {
+    .filter-section {
+      font-size: 0.9em;
+    }
+    .filter-text{
+        margin-bottom: 10px;
+        background-color: white;
+        position: relative;
+        z-index: 40;
+        width: 100%;
+        font-size: 1.4rem;
+        padding: 10px;
+      }
+    .filter-section h3 {
+      font-size: 14px;
+    }
+  
+    .filter-section li {
+      margin-bottom: 12px;
+    }
+  
+    .filtered-products {
+      padding: 10px;
+    }
+  
+    .product-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .product-card h3 {
+      font-size: 16px;
+    }
+  
+    .product-card p {
+      font-size: 14px;
+    }
+  
+    .product-text {
+      font-size: 0.9em;
+      padding: 8px;
+    }
+  }
+  
+@media (max-width: 650px) {
+    .filter-sidebar {
+      display: none;
+    }
+    .filter-text{
+        position: absolute;
+      }
+    .filter-icon {
+      display: block;
+      font-size: 18px;
+      cursor: pointer;
+      padding: 8px;
+      color: #1c1a1a;
+      position: absolute;
+      z-index: 51;
+    }
+  
+    .filter-section {
+      font-size: 0.85em;
+    }
+  
+    .filter-section h3 {
+      font-size: 13px;
+    }
+  
+    .filter-section li {
+      margin-bottom: 10px;
+    }
+  
+    .filtered-products {
+      padding: 8px;
+    }
+  
+    .product-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+  
+    .product-card h3 {
+      font-size: 15px;
+    }
+  
+    .product-card p {
+      font-size: 13px;
+    }
+  
+    .product-text {
+      font-size: 0.85em;
+      padding: 6px;
+    }
+  
+    .filter-sidebar.visible {
+      z-index: 60;
+    }
+  
+    .filter-icon {
+      top: 220px;
+      right: 20px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .filter-section {
+      font-size: 0.8em;
+    }
+  
+    .filter-section h3 {
+      font-size: 10px;
+    }
+  
+    .filter-section li {
+      margin-bottom: 8px;
+    }
+  
+    .product-grid {
+      gap: 10px;
+    }
+  
+    .product-card h3 {
+      font-size: 14px;
+    }
+  
+    .product-card p {
+      font-size: 12px;
+    }
+  
+    .product-text {
+      font-size: 0.8em;
+      padding: 5px;
+    }
+  
+    .filter-icon {
+      top: 122px; 
+      right: 15px;
+    }
+  }
+
+//   @media (max-width: 350px) {
+//     .filter-section {
+//       font-size: 0.75em; 
+//     }
+  
+//     .filter-section h3 {
+//       font-size: 11px;
+//     }
+  
+//     .filter-section li {
+//       margin-bottom: 6px; 
+//     }
+  
+//     .filtered-products {
+//       padding: 5px; 
+//     }
+  
+//     .product-grid {
+//       grid-template-columns: 1fr;
+//       gap: 5px; 
+  
+//     .product-card h3 {
+//       font-size: 12px; 
+//     }
+  
+//     .product-card p {
+//       font-size: 11px;
+//     }
+  
+//     .product-text {
+//       font-size: 0.75em;
+//       padding: 3px; 
+//     }
+  
+//     .filter-icon {
+//       font-size: 18px;
+//       top: 35px; 
+//       right: 10px; 
+//       padding: 5px;
+//     }
+//   }
+// }

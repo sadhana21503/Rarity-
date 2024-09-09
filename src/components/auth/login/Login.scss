@@ -1,0 +1,256 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  background-color: #f5f5f5;
+
+  .auth-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #000;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 0.9rem;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 15px;
+
+      input {
+        width: 100%;
+        padding: 15px;
+        padding-right: 10px; 
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: #e0e0e0;
+        color: #000;
+
+        &::placeholder {
+          color: #666;
+          width: 100%;
+        }
+      }
+
+      .toggle-visibility {
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #666;
+        font-size: 1.2rem;
+        margin-top: 5px;
+      }
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      background-color: #000;
+      color: #fff;
+      border-radius: 10px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #333;
+      }
+    }
+
+    p {
+      text-align: center;
+      color: #000;
+      margin-top: 10px;
+      cursor: pointer;
+
+      &:hover {
+        color: #666;
+      }
+    }
+
+    .forgot-password-container {
+      display: block; 
+      margin-top: 20px;
+
+      p {
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 15px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+
+        label {
+          display: block;
+          margin-bottom: 10px; 
+          font-size: 14px;
+          color: #000;
+          padding-left: 2px; 
+        }
+
+        input {
+          width: 100%;
+          padding: 15px; 
+          border: 1px solid #ccc;
+          border-radius: 4px;
+        }
+      }
+
+      button {
+        width: 100%;
+        padding: 18px;
+        border: none;
+        background-color: #000;
+        color: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+        border: 4px;
+        border-radius: 5px;
+
+        &:hover {
+          background-color: #333;
+        }
+      }
+
+      .forgot-password-message {
+        color: #d9534f; 
+        margin-top: 10px;
+      }
+
+      .go-to-login-link {
+        color: #000; 
+        font-size: 14px;
+        margin-top: 10px;
+        cursor: pointer;
+        text-decoration: underline;
+
+        &:hover {
+          color: #333;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    min-height: 80vh;
+  }
+
+  .auth-container {
+    padding: 10px;
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .form-group {
+      margin-bottom: 12px;
+
+      input {
+        width: 100%; 
+        padding: 12px;
+        font-size: 0.9rem;
+      }
+
+      .toggle-visibility {
+        font-size: 1rem;
+      }
+    }
+
+    button {
+      padding: 12px;
+      font-size: 1rem;
+    }
+
+    p {
+      margin-top: 8px;
+      font-size: 0.9rem;
+    }
+
+    .forgot-password-container {
+      p {
+        font-size: 12px;
+      }
+
+      button {
+        padding: 12px;
+        font-size: 0.9rem;
+      }
+
+      .go-to-login-link {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .login-container {
+    min-height: 80vh;
+  }
+
+  .auth-container {
+    padding: 10px;
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+
+      input {
+        width: 100%;
+        padding: 8px;
+        font-size: 0.8rem;
+      }
+
+      .toggle-visibility {
+        font-size: 0.9rem; 
+      }
+    }
+
+    button {
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+
+    p {
+      margin-top: 6px;
+      font-size: 0.8rem;
+    }
+
+    .forgot-password-container {
+      p {
+        font-size: 10px;
+      }
+
+      button {
+        padding: 8px;
+        font-size: 0.8rem;
+      }
+
+      .go-to-login-link {
+        font-size: 10px;
+      }
+    }
+  }
+}

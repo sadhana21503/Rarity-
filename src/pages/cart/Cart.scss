@@ -1,0 +1,106 @@
+@import "../../globalscss/global.scss";
+.cart-main {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	margin: 0px 80px;
+	padding: 20px;
+	@include responsive(500px) {
+		margin: 0px;
+	}
+	@include responsive(1200px) {
+		margin: 0px;
+	}
+	h2 {
+		margin-left: 60px;
+		font-size: 2.5rem;
+		font-weight: 600;
+		padding: 10px 0;
+		@include responsive(500px) {
+			font-size: 1.8rem;
+			margin-left: 10px;
+			padding: 2px;
+		}
+	}
+	.cart-child {
+		display: flex;
+		gap: 120px;
+		align-items: center;
+		justify-content: center;
+		@include responsive(500px) {
+			@include flex(column, null, null, 10px);
+		}
+		@include responsive(900px) {
+			@include flex(column, null, null, 10px);
+		}
+		.cart-left {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			width: 50%;
+			@include responsive(500px) {
+				width: 100%;
+			}
+			@include responsive(900px) {
+				width: 100%;
+			}
+		}
+		.cart-right {
+			border: 1px solid #ddd;
+			border-radius: 15px;
+			width: 35%;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			@include responsive(500px) {
+				width: 100%;
+				padding: 10px;
+			}
+			@include responsive(900px) {
+				width: 90%;
+				padding: 10px;
+			}
+			h2 {
+				margin: 0 0 1rem 0;
+				font-size: 1.6rem;
+			}
+			.bill-items {
+				list-style-type: none;
+				padding: 0;
+				.bill-item {
+					display: flex;
+					justify-content: space-between;
+					margin-bottom: 0.5rem;
+					font-size: 1rem;
+					span {
+						font-weight: bold;
+					}
+				}
+			}
+			.total-cost {
+				p {
+					margin-top: 1.5rem;
+					font-size: 1.2rem;
+					font-weight: bold;
+					display: flex;
+					justify-content: space-between;
+				}
+			}
+			.checkout-btn {
+				margin-top: 1.5rem;
+				button {
+					width: 100%;
+					padding: 0.6rem;
+					border: none;
+					background-color: black;
+					color: white;
+					font-size: 1.2rem;
+					cursor: pointer;
+					&:hover {
+						background-color: rgb(58, 57, 57);
+					}
+				}
+			}
+		}
+	}
+}
