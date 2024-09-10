@@ -237,17 +237,35 @@
 							display: flex;
 							gap: 20px;
 							button {
+									width: 100%;
+									padding: 10px;
+									font-size: 18px;
+									cursor: pointer;
+									border: none;
+									background-color: #ccc;
+									color: black;
+									transition: background-color 0.3s ease, color 0.3s ease;
+									&:hover {
+										background-color: black;
+										color: white;
+									}
+								}
+							a {
 								width: 100%;
-								padding: 10px;
-								font-size: 18px;
-								cursor: pointer;
-								border: none;
-								background-color: #ccc;
-								color: black;
-								transition: background-color 0.3s ease, color 0.3s ease;
-								&:hover {
-									background-color: black;
-									color: white;
+								display: inline-block;
+								button {
+									width: 100%;
+									padding: 10px;
+									font-size: 18px;
+									cursor: pointer;
+									border: none;
+									background-color: #ccc;
+									color: black;
+									transition: background-color 0.3s ease, color 0.3s ease;
+									&:hover {
+										background-color: black;
+										color: white;
+									}
 								}
 							}
 						}
