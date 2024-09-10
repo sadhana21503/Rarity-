@@ -1,11 +1,10 @@
 import { v4 as uuid4 } from "uuid";
 
-
 const categories = {
 	Men: [
 		{
 			name: "Shirt",
-			path: "/filter",
+			path: "/category/shirt",
 			image1:
 				"https://bluorng.com/cdn/shop/files/rd3dwws.jpg?v=1723798394&width=360",
 			image2:
@@ -14,7 +13,7 @@ const categories = {
 		},
 		{
 			name: "T-Shirt",
-			path: "/filter",
+			path: "/category/tshirt",
 			image1:
 				"https://bluorng.com/cdn/shop/files/Untitled_Artwork888.jpg?v=1722699893&width=360",
 			image2:
@@ -23,7 +22,7 @@ const categories = {
 		},
 		{
 			name: "Pants",
-			path: "/filter",
+			path: "/category/pant",
 			image1:
 				"https://bluorng.com/cdn/shop/files/blackpant.jpg?v=1721033042&width=360",
 			image2:
@@ -32,7 +31,7 @@ const categories = {
 		},
 		{
 			name: "Shorts",
-			path: "/filter",
+			path: "/category/short",
 			image1:
 				"https://bluorng.com/cdn/shop/files/shorts.jpg?v=1717575289&width=360",
 			image2:
@@ -41,7 +40,7 @@ const categories = {
 		},
 		{
 			name: "Joggers",
-			path: "/filter",
+			path: "/category/jogger",
 			image1:
 				"https://bluorng.com/cdn/shop/files/DSC047966.jpg?v=1682854190&width=360",
 			image2:
@@ -50,7 +49,7 @@ const categories = {
 		},
 		{
 			name: "Sweaters",
-			path: "/filter",
+			path: "/category/sweater",
 			image1:
 				"https://bluorng.com/cdn/shop/products/favour-green-sweatshirt-244545.jpg?v=1672130320&width=360",
 			image2:
@@ -59,7 +58,7 @@ const categories = {
 		},
 		{
 			name: "SweatShirts",
-			path: "/filter",
+			path: "/category/sweatshirts",
 			image1:
 				"https://bluorng.com/cdn/shop/products/image.heic?v=1670479696&width=360",
 			image2:
@@ -68,7 +67,7 @@ const categories = {
 		},
 		{
 			name: "Hoodies",
-			path: "/filter",
+			path: "/category/jacket",
 			image1:
 				"https://bluorng.com/cdn/shop/products/basic-red-hoodie-851668.jpg?v=1671744051&width=360",
 			image2:
@@ -79,7 +78,7 @@ const categories = {
 	Women: [
 		{
 			name: "Shirt",
-			path: "/filter",
+			path: "/category/shirt",
 			image1:
 				"https://bluorng.com/cdn/shop/files/Untitled_Artwork888.jpg?v=1722699893&width=360",
 			image2:
@@ -89,7 +88,7 @@ const categories = {
 		},
 		{
 			name: "T-Shirt",
-			path: "/filter",
+			path: "/category/tshirt",
 			image1:
 				"https://bluorng.com/cdn/shop/files/rd3dwws.jpg?v=1723798394&width=360",
 			image2:
@@ -98,7 +97,7 @@ const categories = {
 		},
 		{
 			name: "Pants",
-			path: "/filter",
+			path: "/category/pant",
 			image1:
 				"https://bluorng.com/cdn/shop/files/blackpant.jpg?v=1721033042&width=360",
 			image2:
@@ -107,7 +106,7 @@ const categories = {
 		},
 		{
 			name: "Shorts",
-			path: "filter",
+			path: "/category/short",
 			image1:
 				"https://bluorng.com/cdn/shop/files/shorts.jpg?v=1717575289&width=360",
 			image2:
@@ -116,7 +115,7 @@ const categories = {
 		},
 		{
 			name: "Joggers",
-			path: "/filter",
+			path: "/category/jogger",
 			image1:
 				"https://bluorng.com/cdn/shop/files/DSC047966.jpg?v=1682854190&width=360",
 			image2:
@@ -125,7 +124,7 @@ const categories = {
 		},
 		{
 			name: "Sweaters",
-			path: "/filter",
+			path: "/category/sweater",
 			image1:
 				"https://bluorng.com/cdn/shop/products/favour-green-sweatshirt-244545.jpg?v=1672130320&width=360",
 			image2:
@@ -134,7 +133,7 @@ const categories = {
 		},
 		{
 			name: "SweatShirts",
-			path: "/filter",
+			path: "/category/sweatshirts",
 			image1:
 				"https://bluorng.com/cdn/shop/products/image.heic?v=1670479696&width=360",
 			image2:
@@ -143,7 +142,7 @@ const categories = {
 		},
 		{
 			name: "Hoodies",
-			path: "/filter",
+			path: "/category/jacket",
 			image1:
 				"https://bluorng.com/cdn/shop/products/basic-red-hoodie-851668.jpg?v=1671744051&width=360",
 			image2:
@@ -303,7 +302,6 @@ const product = {
 			img: "https://www.snitch.co.in/cdn/shop/files/a88835682a42463b372b84f827c2d8c6.webp?v=1724416086&width=120",
 			id: uuid4(),
 		},
-		
 	],
 	mainImage: {
 		img: "https://www.snitch.co.in/cdn/shop/files/4369ae70e755841ff395fd1207a836fc.webp?v=1724416086&width=1800",
@@ -311,7 +309,8 @@ const product = {
 	},
 	productDetails: {
 		name: "Peach Plaid Checks Shirt",
-		price: "INR 1,199",
+		price: 1199,
+		color:"Blue",
 		desc: [
 			{
 				id: uuid4(),
@@ -334,4 +333,5 @@ const product = {
 		],
 	},
 };
-export { categories, offers ,product};
+
+export { categories, offers, product};
